@@ -1,0 +1,40 @@
+{
+  "name": "@mytools-all/mytools-calc",
+  "version": "0.1.0",
+  "description": "计算稿纸：表达式求值 + 稿纸记录，一键复制结果。",
+  "type": "module",
+  "main": "index.html",
+  "license": "MIT",
+  "author": "MyTools Contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mytools-all/mytools-calc.git"
+  },
+  "homepage": "https://github.com/mytools-all/mytools-calc#readme",
+  "bugs": {
+    "url": "https://github.com/mytools-all/mytools-calc/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "plugin.json",
+    "*.html",
+    "*.css",
+    "*.svg",
+    "*.png",
+    "vendor/",
+    "LICENSE",
+    "THIRD_PARTY.md",
+    "README.md",
+    "app.mjs",
+    "common.mjs",
+    "utils.mjs",
+    "*.js",
+    "*.LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  }
+}

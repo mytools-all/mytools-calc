@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>计算稿纸</title>
+    <link rel="stylesheet" href="tool.css" />
+    <style>
+      .calc-line {
+        display: grid;
+        grid-template-columns: 30px minmax(80px, 1fr) minmax(
+            60px,
+            130px
+          ) minmax(60px, 120px) 26px;
+        gap: 8px;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+        padding: 10px 0;
+      }
+      .calc-line input {
+        border: 0;
+        background: transparent;
+        font-size: 17px;
+        font-family: Consolas, monospace;
+      }
+      .calc-line .note {
+        font: 12px "Segoe UI";
+        color: var(--muted);
+        width: 100%;
+      }
+      .answer {
+        text-align: right;
+        color: var(--accent);
+        font-size: 18px;
+        background: none;
+        border: 0;
+      }
+      .line-num {
+        color: var(--muted);
+        font-size: 11px;
+      }
+      .remove {
+        border: 0;
+        padding: 0;
+      }
+      .calc-line:focus-within {
+        background: var(--soft);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="toolbar">
+        <strong>计算稿纸</strong
+        ><span class="muted">Enter 续算 · ↑↓ 切换 · Ctrl+C 复制结果</span
+        ><span class="spacer"></span><button id="export">导出</button
+        ><button id="clear">清空</button><button id="theme">◐</button>
+      </div>
+      <div class="content" id="paper"></div>
+      <div class="toolbar">
+        <button id="add">＋ 新增计算行</button
+        ><span class="muted">支持百分比、千分位、括号和幂运算</span>
+      </div>
+      <footer id="status" class="status" role="status"></footer>
+    </main>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "mytools-calc",
+  "description": "计算稿纸：表达式求值 + 稿纸记录，一键复制结果。",
+  "version": "0.1.0",
+  "apiVersion": 1,
+  "main": "index.html",
+  "capabilities": [
+    "clipboard.write",
+    "storage.get",
+    "storage.set"
+  ],
+  "features": [
+    {
+      "code": "calc",
+      "explain": "打开计算稿纸",
+      "cmds": [
+        "计算稿纸",
+        "计算器",
+        "计算",
+        "calc"
+      ]
+    }
+  ],
+  "pluginName": "计算稿纸"
+}
