@@ -6,7 +6,7 @@ import {
   status,
   ready,
   call,
-  download,
+  confirmAction,
   debounce,
 } from "./common.mjs";
 import { evaluate } from "./utils.mjs";
@@ -106,16 +106,16 @@ $("#add").onclick = () => {
   render(rows.length - 1);
   save();
 };
-$("#clear").onclick = () => {
-  if (rows.some((r) => r.expression) && !confirm("清空全部计算稿纸？")) return;
+$("#clear").onclick = action(async () => {
+  if (rows.some((r) => r.expression) && !await confirmAction("清空全部计算稿纸？")) return;
   rows = [{ expression: "", note: "" }];
   render(0);
   save();
-};
-$("#export").onclick = () =>
-  download(
-    "计算稿纸.txt",
-    rows
+});
+$("#export").onclick = action(async () => {
+  const result = await call("fs.exporttext", {
+    name: "计算稿纸.txt",
+    content: rows
       .map((r) => {
         try {
           return (
@@ -129,7 +129,9 @@ $("#export").onclick = () =>
         }
       })
       .join("\n"),
-  );
+  });
+  status(result.cancelled ? "已取消导出" : "稿纸已导出");
+});
 render();
 ready(async () => {
   const saved = await call("storage.get", { key: "paper" });
