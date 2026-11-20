@@ -1,6 +1,6 @@
 {
   "name": "@mytools-all/mytools-calc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "计算稿纸：表达式求值 + 稿纸记录，一键复制结果。",
   "type": "module",
   "main": "index.html",
@@ -36,5 +36,8 @@
   ],
   "scripts": {
     "test": "node --test"
+  },
+  "devDependencies": {
+    "happy-dom": "21.0.4"
   }
 }
