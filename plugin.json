@@ -1,7 +1,7 @@
 {
   "name": "mytools-calc",
   "description": "计算稿纸：表达式求值 + 稿纸记录，一键复制结果。",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "apiVersion": 1,
   "main": "index.html",
   "capabilities": [
@@ -22,5 +22,8 @@
       ]
     }
   ],
-  "pluginName": "计算稿纸"
+  "pluginName": "计算稿纸",
+  "engines": {
+    "mytools": ">=0.2.0 <0.3.0"
+  }
 }
